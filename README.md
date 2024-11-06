@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# CryptoDo App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A cryptocurrency application built with TypeScript that provides up-to-date crypto news, NFTs, and charts fetched from open APIs. The app features a smooth registration flow using Firebase and offers an intuitive user interface with a modern design powered by Tailwind CSS.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Crypto News**: Get the latest news in the crypto world, fetched using [NewsAPI](https://newsapi.org/).
+- **NFTs**: View and track popular NFTs from different collections, integrated with [AlchemyAPI](https://www.alchemyapi.io/).
+- **Crypto Charts**: Interactive charts showing cryptocurrency prices and trends, powered by [ThingProxy](https://www.thingproxy.com/).
+- **User Registration**: Secure user authentication and registration flow using [Firebase](https://firebase.google.com/).
 
-### `yarn run start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **TypeScript**: Ensures type safety and scalability of the application.
+- **Tailwind CSS**: Utility-first CSS framework for fast UI development.
+- **NewsAPI**: Fetches the latest crypto-related news.
+- **AlchemyAPI**: Provides data for NFTs, allowing users to explore trending NFT collections.
+- **ThingProxy**: Fetches real-time cryptocurrency data and charts.
+- **Firebase**: Handles user registration and authentication.
+- **React**: A JavaScript library for building user interfaces.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `yarn test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   git clone https://github.com/kshepetska/cryptoDo.git
 
-### `yarn run build`
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd crypto-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `yarn run eject`
+3. Install the dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Run the development server:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm start
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once the app is running, you can explore the following features:
+
+- **Crypto News**: The latest crypto-related news fetched from NewsAPI, updated regularly.
+- **NFTs**: A section showing the top trending NFTs, integrated with AlchemyAPI, with relevant data.
+- **Crypto Charts**: Real-time cryptocurrency charts fetched through ThingProxy.
+- **User Registration**: The app provides a registration flow using Firebase, allowing users to securely sign up and log in.
