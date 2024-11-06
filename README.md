@@ -23,10 +23,10 @@ A cryptocurrency application built with TypeScript that provides up-to-date cryp
 
 1. Clone the repository:
 
-   ```
-   git clone https://github.com/kshepetska/cryptoDo.git
+```
+git clone https://github.com/kshepetska/cryptoDo.git
 
-   ```
+```
 
 2. Navigate to the project directory:
 
