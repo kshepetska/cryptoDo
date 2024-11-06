@@ -1,0 +1,43 @@
+.Toastify__toast {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1D1E1E;
+    padding: 10px;
+    height: 76px;
+    font-weight: 600;
+    font-size:20px;
+    line-height: 24px;
+    text-transform: capitalize;
+    font-family: Plus Jakarta Sans, sans-serif;
+
+}
+.Toastify__toast-body{
+    padding: 0;
+}
+.Toastify__toast-container {
+    width: 80vw;
+}
+
+@media (max-width: 460px) {
+    .Toastify__toast-container {
+        width: 100%;
+    }
+
+    .Toastify__toast {
+        padding: 12px;
+        height: 46px;
+        font-weight: 500;
+        font-size:12px;
+        line-height: 14px;
+        margin-top: 5px;
+    }
+}
+
+.question-wrapper p {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.question-wrapper {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}

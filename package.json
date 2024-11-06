@@ -1,0 +1,100 @@
+{
+  "name": "step-launchpad",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "private": true,
+  "main": "index.tsx",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@novu/headless": "^0.22.0",
+    "@radix-ui/react-popover": "^1.0.7",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@react-firebase/auth": "^0.2.10",
+    "@sentry/react": "^7.102.0",
+    "@synaps-io/verify-sdk": "^4.0.41",
+    "@telegram-auth/react": "^1.0.1",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/react": "^18.2.41",
+    "@types/react-dom": "^18.2.17",
+    "@types/react-router-dom": "^5.3.3",
+    "@web3modal/ethereum": "^2.7.1",
+    "@web3modal/react": "^2.7.1",
+    "@web3modal/wagmi": "^3.5.3",
+    "apexcharts": "^4.0.0",
+    "axios": "^1.7.7",
+    "classnames": "^2.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "ethers": "^6.13.4",
+    "firebase": "^10.7.1",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.5.0",
+    "react-canvas-confetti": "^2.0.5",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-icons": "^5.3.0",
+    "react-jazzicon": "^1.0.4",
+    "react-loading-skeleton": "^3.3.1",
+    "react-modal": "^3.16.1",
+    "react-otp-input": "^3.1.1",
+    "react-paginate": "^8.2.0",
+    "react-router-dom": "^6.20.1",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.2",
+    "tailwindcss-typography": "^3.1.0",
+    "viem": "~1.21.4",
+    "wagmi": "~1.4.13",
+    "web-vitals": "^2.1.4",
+    "web3": "^4.14.0",
+    "zustand": "^4.4.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "eslint --fix **/*.ts **/*.js **/*.tsx **/*.jsx --no-error-on-unmatched-pattern",
+    "prepare": "husky install",
+    "precommit": "npm run lint && npm run compile"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "20.8.2",
+    "@types/web3": "^1.2.2",
+    "autoprefixer": "^10.4.16",
+    "gts": "^5.2.0",
+    "husky": "^8.0.3",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.3.3"
+  }
+}
