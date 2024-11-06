@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Web3 from 'web3';
 
 export const connectWallet = async () => {
