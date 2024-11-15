@@ -45,12 +45,12 @@ export const UserWallet = ({address}: {address: string}) => {
             }}
           >
             <>
-              <div className="relative z-20 mx-auto border p-5 md:mr-10 font-sans w-full sm:w-[413px] max-w-[336px] sm:max-w-[327px] max-h-[488px] invisible-scrollbar border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#0E1012] text-white overflow-auto">
+              <div className="relative z-20 mx-auto border p-5 md:mr-10 font-sans w-full sm:w-[413px] max-w-[336px] sm:max-w-[327px] max-h-[488px] invisible-scrollbar border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] text-white overflow-auto">
                 <div className="flex gap-2 items-center mb-5">
                   <div className="font-bold">Wallet</div>
                 </div>
                 <div className="mb-5 flex items-center gap-[10px]">
-                  <div className="p-2 bg-[#0E1012] rounded-md">
+                  <div className="p-2 bg-[#070A1F] rounded-md">
                     <img
                       className="w-6 h-6"
                       src={Metamask as string}

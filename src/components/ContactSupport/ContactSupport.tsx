@@ -20,7 +20,7 @@ export const ContactSupport = ({variant}: ContactSupportProps) => {
     <>
       {variant === 'large' ? (
         <div
-          className={`rounded-[20px] p-6 backdrop-blur-lg shadow-lg shadow-[#286497] flex flex-col gap-6`}
+          className={`p-6 border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] flex flex-col gap-6`}
         >
           <div className="flex items-center gap-4">
             <img className="w-12 h-12" src={emailIcon} alt="emailIcon" />
@@ -66,7 +66,7 @@ export const ContactSupport = ({variant}: ContactSupportProps) => {
         </div>
       ) : (
         <div
-          className={`rounded-[20px] p-6 backdrop-blur-lg shadow-lg shadow-[#286497] flex flex-col gap-6`}
+          className={`p-6 border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] flex flex-col gap-6`}
         >
           <span className="text-xl font-semibold capitalize text-white">
             Still have questions?

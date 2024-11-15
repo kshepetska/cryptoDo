@@ -37,7 +37,7 @@ export const LogoutButton = () => {
           </span>
         </button>
         <div
-          className={`absolute right-0 top-[calc(100%+10px)] z-10 w-screen max-w-[266px] rounded-[1.25rem] border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#0E1012] text-white transition-transform duration-200 ease-in-out p-5 overflow-hidden ${
+          className={`absolute right-0 top-[calc(100%+10px)] z-10 w-screen max-w-[266px] border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] text-white transition-transform duration-200 ease-in-out p-5 overflow-hidden ${
             isDropdownVisible
               ? 'scale-100 opacity-100'
               : 'scale-95 opacity-0 pointer-events-none'

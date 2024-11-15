@@ -17,7 +17,7 @@ module.exports = {
         'radial-gradient':
           'radial-gradient(88% 50% at 50% 50%, #286497 0%, rgba(229, 253, 85, 0.00) 97.44%)',
         'account-panel-gradient':
-          'linear-gradient(180deg, #0E1012 0%, #0E1012 0.01%, rgba(14, 16, 18, 0.00) 100%)',
+          'linear-gradient(180deg, #070A1F 0%, #070A1F 0.01%, rgba(14, 16, 18, 0.00) 100%)',
       },
       borderRadius: {
         20: '20px',
@@ -32,7 +32,7 @@ module.exports = {
         'l-600': 'rgba(255,255,255,.6)',
         'l-800': 'rgba(255,255,255,.8)',
         'hover-link': '#26DDFF',
-        dark: '#0E1012',
+        dark: '#070A1F',
         'd-800': 'rgba(0,0,0,.8)',
         'd-900': 'rgba(0,0,0,.9)',
         pink: '#FD5573',
