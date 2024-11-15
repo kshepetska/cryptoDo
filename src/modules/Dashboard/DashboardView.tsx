@@ -62,9 +62,9 @@ export const DashboardView: React.FC = () => {
     <LayoutDashboardView>
       <div className="flex flex-col w-full gap-10 p-6">
         <div className="flex flex-row w-full justify-center items-center gap-6">
-          <div className="flex flex-col max-w-[522px]">
+          <div className="flex flex-col max-w-[722px] my-6">
             <div className="pt-[60px] md:pt-0 justify-center">
-              <p className="text-[#525355] text-[28px] lg:text-[48px] leading-[120%] tracking-[-0.96px] font-bold font-inter">
+              <p className="text-[#525355] text-[42px] lg:text-[56px] leading-[120%] tracking-[-0.96px] font-bold font-inter">
                 Join the Future of
                 <span>
                   <br />

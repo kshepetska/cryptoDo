@@ -28,11 +28,18 @@ export const Header: FC<HeaderProps> = ({
   backwardNavigation,
   logo = false,
 }) => {
-  const location = useLocation();
   const navigationLinkConfig = getHeaderNavigationIcon();
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
 
   const handleConnectWallet = async (): Promise<void> => {
+    if (typeof window.ethereum === 'undefined') {
+      alert(
+        'MetaMask is not installed. Please install it to connect your wallet.'
+      );
+      window.open('https://metamask.io/download/', '_blank');
+      return;
+    }
+
     try {
       const address: string | null = await connectWallet();
       setWalletAddress(address);

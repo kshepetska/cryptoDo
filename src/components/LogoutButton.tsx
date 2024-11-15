@@ -4,6 +4,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {signOut} from '../services/auth';
 import {useAuth} from '../services/authProvider';
+import {NextArrow} from '../assets/svgComponents/NextArrow';
 
 export const LogoutButton = () => {
   const [isDropdownVisible, setDropdownVisible] = useState<boolean>(false);
@@ -25,36 +26,42 @@ export const LogoutButton = () => {
 
   return (
     <>
-      <button
-        className={`relative flex justify-center items-center gap-3 h-[48px] w-fit px-4 rounded-[42px] text-white text-[16px] uppercase font-inter font-bold transition-all duration-200 ease-in-out bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] hover:from-[#00A6E2] hover:to-[#0272B7]`}
-        onClick={handleHiddenDropdown}
-      >
-        <img className="w-6 h-6" src={userIcon} alt="userIcon" />
-        <span className="text-sm font-[300]">Account</span>
+      <div className="relative">
+        <button
+          className={`relative flex justify-center items-center gap-2 h-[48px] px-3 py-1 bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] rounded-[42px] shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:from-[#00A6E2] hover:to-[#0272B7]`}
+          onClick={handleHiddenDropdown}
+        >
+          <img className="w-6 h-6" src={userIcon} alt="userIcon" />
+          <span className="hidden md:block text-sm uppercase text-white">
+            Account
+          </span>
+        </button>
         <div
-          className={`absolute cursor-default !w-[266px] right-0 top-[calc(100%+1rem)] z-10 shadow-lg shadow-[#286497] rounded-20 transition-all p-5 overflow-hidden bg-[#0B0B0D] ${
-            !isDropdownVisible
-              ? 'scale-95 opacity-0 pointer-events-none'
-              : 'scale-100 opacity-100'
+          className={`absolute right-0 top-[calc(100%+10px)] z-10 w-screen max-w-[266px] rounded-[1.25rem] border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#0E1012] text-white transition-transform duration-200 ease-in-out p-5 overflow-hidden ${
+            isDropdownVisible
+              ? 'scale-100 opacity-100'
+              : 'scale-95 opacity-0 pointer-events-none'
           }`}
         >
-          <ul className="[&>li]:cursor-pointer text-start [&>li]:h-10">
-            <li className="text-sm font-inter mb-3">
-              <div className="font-bold text-l-800 mb-[2px] truncate">
-                {currentUser?.email || 'No email available'}
+          <div className="flex flex-col gap-5">
+            <div className="flex gap-2 items-center mb-3">
+              <div className="font-bold text-[16px]">Account</div>
+            </div>
+            <div className="text-sm font-bold truncate">
+              {currentUser?.email || 'No email available'}
+            </div>
+            <div className="flex justify-end relative">
+              <div
+                className={`flex items-center justify-between gap-[10px] text-xs font-normal uppercase leading-3 text-white hover:underline cursor-pointer transition-all duration-200 ease-in-out bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] rounded-[42px] py-3 w-full px-3`}
+                onClick={logout}
+              >
+                Log out
+                <NextArrow width={24} height={4} />
               </div>
-            </li>
-
-            <li
-              onClick={logout}
-              className="flex justify-start items-center gap-3 transition-all min-w-[9rem]"
-            >
-              <img className="w-6 h-6" src={logoutIcon} alt="logoutIcon" />
-              <span className="text-sm font-bold uppercase">Log out</span>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-      </button>
+      </div>
     </>
   );
 };

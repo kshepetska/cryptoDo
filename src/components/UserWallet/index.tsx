@@ -50,7 +50,7 @@ export const UserWallet = ({address}: {address: string}) => {
                   <div className="font-bold">Wallet</div>
                 </div>
                 <div className="mb-5 flex items-center gap-[10px]">
-                  <div className="p-2 bg-l-100 rounded-md">
+                  <div className="p-2 bg-[#0E1012] rounded-md">
                     <img
                       className="w-6 h-6"
                       src={Metamask as string}
@@ -59,7 +59,7 @@ export const UserWallet = ({address}: {address: string}) => {
                   </div>
                   <div className="flex-1">
                     <div className="text-l-600 text-xs leading-5">Ethereum</div>
-                    <div className="font-mono font-bold text-sm leading-6">
+                    <div className="font-normal text-sm leading-6">
                       {shortenAddress(address, 4, 5)}
                     </div>
                   </div>
@@ -71,7 +71,7 @@ export const UserWallet = ({address}: {address: string}) => {
                 </div>
                 <div className="flex justify-end relative">
                   <div
-                    className={`flex items-center gap-[10px] text-xs font-bold uppercase leading-3 text-green-200 hover:underline cursor-pointer transition-all duration-200 ease-in-out bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] rounded-[42px] py-1 px-3`}
+                    className={`flex items-center justify-between gap-[10px] text-xs font-normal uppercase leading-3 text-white hover:underline cursor-pointer transition-all duration-200 ease-in-out bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] rounded-[42px] py-3 w-full px-3`}
                     onClick={() => {
                       if (address) {
                         signMessage({
@@ -81,8 +81,8 @@ export const UserWallet = ({address}: {address: string}) => {
                       }
                     }}
                   >
-                    connect new wallet
-                    <NextArrow width={24} height={4} fill="#E5FD55" />
+                    Connect new wallet
+                    <NextArrow width={24} height={4} />
                   </div>
                 </div>
               </div>

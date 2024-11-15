@@ -13,7 +13,10 @@ export const RegistrationView: React.FC = () => {
 
   const [emailSignIn, setEmailSignIn] = useState<string>('');
   const [isTickChecked, setIsTickChecked] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isEmailSignInLoading, setIsEmailSignInLoading] =
+    useState<boolean>(false);
+  const [isGoogleSignInLoading, setIsGoogleSignInLoading] =
+    useState<boolean>(false);
   const [showErrorEmailSignIn, setShowErrorEmailSignIn] =
     useState<boolean>(false);
   const [messageFromRequestSignIn, setMessageFromRequestSignIn] =
@@ -44,7 +47,7 @@ export const RegistrationView: React.FC = () => {
       return;
     }
 
-    setIsLoading(true);
+    setIsEmailSignInLoading(true);
     try {
       await signInUser(emailSignIn, 'Password');
       navigate('/dashboard');
@@ -54,12 +57,12 @@ export const RegistrationView: React.FC = () => {
       setMessageFromRequestSignIn(errorMessage);
       setShowErrorEmailSignIn(true);
     } finally {
-      setIsLoading(false);
+      setIsEmailSignInLoading(false);
     }
   };
 
   const handleSignInWithGoogle = async () => {
-    setIsLoading(true);
+    setIsGoogleSignInLoading(true);
     try {
       await signInWithGoogle();
       navigate('/dashboard');
@@ -69,7 +72,7 @@ export const RegistrationView: React.FC = () => {
       setMessageFromRequestSignIn(errorMessage);
       setShowErrorEmailSignIn(true);
     } finally {
-      setIsLoading(false);
+      setIsGoogleSignInLoading(false);
     }
   };
 
@@ -143,7 +146,7 @@ export const RegistrationView: React.FC = () => {
             </div>
             <div className="flex relative flex-col w-full gap-y-2.5 md:items-center xl:gap-y-6 mt-12">
               <Button
-                loading={isLoading}
+                loading={isGoogleSignInLoading}
                 className="w-full lg:w-[414px]"
                 text={'Sign In with Google'}
                 onClick={handleSignInWithGoogle}
@@ -152,7 +155,7 @@ export const RegistrationView: React.FC = () => {
                 bigger
               />
               <Button
-                loading={isLoading}
+                loading={isEmailSignInLoading}
                 className="w-full lg:w-[414px]"
                 text={'Sign In'}
                 onClick={handleSignInClick}
