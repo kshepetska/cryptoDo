@@ -7,9 +7,8 @@ import {fetchNFTs} from '../../services/fetchNfts';
 import {FetchChartDataResult} from '../../types/charts';
 import {NewsArticle} from '../../types/news';
 import {NFT} from '../../types/nfts';
-import Crystal from '../../assets/crystal.png';
-import {NextArrow} from '../../assets/svgComponents/NextArrow';
 import {useSidebar} from '../../services/sidebarContext';
+import {LandingBlocks} from './components/LandingBlocks';
 
 export const DashboardView: React.FC = () => {
   const [news, setNews] = useState<NewsArticle[]>([]);
@@ -19,9 +18,6 @@ export const DashboardView: React.FC = () => {
   const [nfts, setNfts] = useState<NFT[]>([]);
   const [loading, setLoading] = useState(true);
   const {sidebarWidth, collapsed} = useSidebar();
-  useEffect(() => {
-    console.log('Sidebar width:', sidebarWidth);
-  }, [collapsed, sidebarWidth]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,35 +56,17 @@ export const DashboardView: React.FC = () => {
 
   return (
     <LayoutDashboardView>
-      <div className="flex flex-col w-full gap-10 p-6">
-        <div className="flex flex-row w-full justify-center items-center gap-6">
-          <div className="flex flex-col max-w-[722px] my-6">
-            <div className="pt-[60px] md:pt-0 justify-center">
-              <p className="text-[#525355] text-[42px] lg:text-[56px] leading-[120%] tracking-[-0.96px] font-bold font-inter">
-                Join the Future of
-                <span>
-                  <br />
-                  Innovative
-                </span>
-                <br />
-                <span className="text-[#286497] font-bold font-inter">
-                  Web3
-                </span>
-                <span className="text-white font-bold font-inter">
-                  <br />
-                  Powered by CryptoDo.
-                </span>
-              </p>
-            </div>
+      <div className="flex flex-col w-full justify-center gap-10 p-6">
+        <div className="py-20 flex w-full justify-center items-center">
+          <div className="max-w-[60vw] md:pt-0 justify-center">
+            <LandingBlocks />
           </div>
-          <img src={Crystal} alt="Crystal" />
         </div>
 
         <div className="flex flex-col w-full">
           <div className="flex justify-start gap-2 items-center mb-4">
-            <h2 className="text-xl font-bold">Crypto News</h2>
-            <Link to={'/news'} className="cursor-pointer">
-              <NextArrow />
+            <Link to={'/news'} className="text-lg font-semibold text-white">
+              Explore the Latest Crypto News
             </Link>
           </div>
           <div
@@ -100,17 +78,17 @@ export const DashboardView: React.FC = () => {
             {news.map(article => (
               <div
                 key={article.source.id}
-                className="cursor-pointer p-4 shadow-md rounded-lg w-72 flex-none"
+                className="p-4 shadow-md rounded-lg bg-[#286497] bg-opacity-20 w-72 flex-none"
               >
                 <img
                   src={article.urlToImage}
                   alt={article.title}
                   className="w-full h-32 object-cover rounded"
                 />
-                <h3 className="text-lg font-semibold mt-2 overflow-hidden text-ellipsis line-clamp-2">
+                <h3 className="text-xl font-bold text-white mt-2 line-clamp-2">
                   {article.title}
                 </h3>
-                <p className="text-gray-600 text-sm mt-1 overflow-hidden text-ellipsis line-clamp-3">
+                <p className="text-white text-sm mt-1 line-clamp-3">
                   {article.description}
                 </p>
               </div>
@@ -120,9 +98,8 @@ export const DashboardView: React.FC = () => {
 
         <div className="flex flex-col w-full">
           <div className="flex justify-start gap-2 items-center mb-4">
-            <h2 className="text-xl font-bold">Market Charts</h2>
-            <Link to={'/charts'} className="cursor-pointer">
-              <NextArrow />
+            <Link to={'/charts'} className="text-lg font-semibold text-white">
+              Dive Into Market Insights
             </Link>
           </div>
           <div
@@ -134,11 +111,13 @@ export const DashboardView: React.FC = () => {
             {Object.entries(charts).map(([id, data]) => (
               <div
                 key={id}
-                className="cursor-pointer p-4 shadow-md rounded-lg w-72 flex-none"
+                className="p-4 shadow-md rounded-lg bg-[#286497] bg-opacity-20 w-72 flex-none"
               >
                 <img src={data.image} alt={id} className="w-10 h-10 mb-2" />
-                <h3 className="text-lg font-semibold">{id.toUpperCase()}</h3>
-                <p className="text-gray-600 text-sm">
+                <h3 className="text-xl font-bold text-white">
+                  {id.toUpperCase()}
+                </h3>
+                <p className="text-white text-sm">
                   Market Cap: {data.marketCap}
                 </p>
               </div>
@@ -148,9 +127,8 @@ export const DashboardView: React.FC = () => {
 
         <div className="flex flex-col w-full">
           <div className="flex justify-start gap-2 items-center mb-4">
-            <h2 className="text-xl font-bold">NFTs</h2>
-            <Link to={'/nfts'} className="cursor-pointer">
-              <NextArrow />
+            <Link to={'/nfts'} className="text-lg font-semibold text-white">
+              Discover Top NFTs
             </Link>
           </div>
           <div
@@ -162,17 +140,17 @@ export const DashboardView: React.FC = () => {
             {nfts.map(nft => (
               <div
                 key={nft.id.tokenId}
-                className="cursor-pointer p-4 shadow-md rounded-lg w-72 flex-none"
+                className="p-4 shadow-md rounded-lg bg-[#286497] bg-opacity-20 w-72 flex-none"
               >
                 <img
                   src={nft.media[0]?.gateway}
                   alt={nft.title}
                   className="w-full h-32 object-cover rounded"
                 />
-                <h3 className="text-lg font-semibold mt-2 text-ellipsis line-clamp-2">
+                <h3 className="text-xl font-bold text-white mt-2 line-clamp-2">
                   {nft.title}
                 </h3>
-                <p className="text-gray-600 text-sm mt-1 overflow-hidden text-ellipsis line-clamp-3">
+                <p className="text-white text-sm mt-1 line-clamp-3">
                   {nft.description || 'No description available.'}
                 </p>
               </div>

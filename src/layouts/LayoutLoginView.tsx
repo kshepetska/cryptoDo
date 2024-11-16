@@ -16,13 +16,13 @@ export const LayoutLoginView: React.FC<LayoutLoginViewProps> = ({children}) => {
           <div className="hidden md:flex bg-center w-full max-w-[650px]">
             <div className="flex flex-col">
               <div className="pt-[60px] md:pt-0 max-w-[522px] justify-center">
-                <p className="text-[#525355] text-[28px] lg:text-[48px] leading-[120%] tracking-[-0.96px] font-bold font-inter">
+                <p className="text-[#43CA9B] text-[28px] lg:text-[48px] leading-[120%] tracking-[-0.96px] font-bold font-inter">
                   Be Part of The
                   <span>
                     <br></br>Next
                   </span>
                   Wave of <br></br>
-                  <span className="text-[#286497] font-bold font-inter">
+                  <span className="text-[#01C3FD] font-bold font-inter">
                     Web3
                   </span>
                   <span className="text-white font-bold font-inter">
