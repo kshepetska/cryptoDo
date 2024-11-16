@@ -1,4 +1,3 @@
-import logoutIcon from '../assets/logoutIcon.svg';
 import userIcon from '../assets/userIcon.svg';
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
@@ -28,7 +27,7 @@ export const LogoutButton = () => {
     <>
       <div className="relative">
         <button
-          className={`relative flex justify-center items-center gap-2 h-[48px] px-3 py-1 bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] rounded-[42px] shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:from-[#00A6E2] hover:to-[#0272B7]`}
+          className={`relative flex justify-center items-center gap-2 h-[48px] px-3 py-1 bg-[#01C3FD] bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 transition-colors duration-200 ease-in-out rounded-[42px] shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:from-[#00A6E2] hover:to-[#0272B7]`}
           onClick={handleHiddenDropdown}
         >
           <img className="w-6 h-6" src={userIcon} alt="userIcon" />
@@ -37,7 +36,7 @@ export const LogoutButton = () => {
           </span>
         </button>
         <div
-          className={`absolute right-0 top-[calc(100%+10px)] z-10 w-screen max-w-[266px] border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] text-white transition-transform duration-200 ease-in-out p-5 overflow-hidden ${
+          className={`absolute right-0 top-[calc(100%+15px)] z-10 w-screen max-w-[266px] bg-[#01C3FD] bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 transition-colors duration-200 ease-in-out rounded-[1.25rem] text-white transition-transform duration-200 ease-in-out p-5 overflow-hidden ${
             isDropdownVisible
               ? 'scale-100 opacity-100'
               : 'scale-95 opacity-0 pointer-events-none'

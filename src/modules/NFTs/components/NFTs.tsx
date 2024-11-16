@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import ReactPaginate from 'react-paginate';
 import {fetchNFTs} from '../../../services/fetchNfts';
 import {NftModal} from './NftModal';
 import {NFT} from '../../../types/nfts';
+import {Button} from '../../../components/Button';
 
 const SkeletonNFT: React.FC = () => (
   <div className="rounded-[20px] min-w-[220px] max-w-[320px] w-full p-6 backdrop-blur-lg shadow-lg shadow-[#286497] flex flex-col gap-3">
@@ -16,18 +16,19 @@ export const NFTDisplay: React.FC = () => {
   const [nfts, setNfts] = useState<NFT[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
-  const [currentPage, setCurrentPage] = useState(0);
   const [selectedNFT, setSelectedNFT] = useState<NFT | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [displayedNfts, setDisplayedNfts] = useState<NFT[]>([]);
 
   const CONTRACT_ADDRESS = '0xF5FFF32CF83A1A614e15F25Ce55B0c0A6b5F8F2c';
-  const ITEMS_PER_PAGE = 12;
+  const ITEMS_PER_LOAD = 12;
 
   useEffect(() => {
     const loadNFTs = async () => {
       try {
         const nftsData = await fetchNFTs(CONTRACT_ADDRESS);
         setNfts(nftsData);
+        setDisplayedNfts(nftsData.slice(0, ITEMS_PER_LOAD));
         setLoading(false);
       } catch (err) {
         setLoading(false);
@@ -37,16 +38,6 @@ export const NFTDisplay: React.FC = () => {
 
     void loadNFTs();
   }, [CONTRACT_ADDRESS]);
-
-  const totalPages = Math.ceil(nfts.length / ITEMS_PER_PAGE);
-  const displayedNFTs = nfts.slice(
-    currentPage * ITEMS_PER_PAGE,
-    (currentPage + 1) * ITEMS_PER_PAGE
-  );
-
-  const handlePageChange = (selectedItem: {selected: number}) => {
-    setCurrentPage(selectedItem.selected);
-  };
 
   const handleNFTClick = (nft: NFT) => {
     setSelectedNFT(nft);
@@ -65,6 +56,11 @@ export const NFTDisplay: React.FC = () => {
       </div>
     );
   }
+  const handleLoadMore = () => {
+    const nextIndex = displayedNfts.length;
+    const nextArticles = nfts.slice(nextIndex, nextIndex + ITEMS_PER_LOAD);
+    setDisplayedNfts(prevNfts => [...prevNfts, ...nextArticles]);
+  };
 
   return (
     <div className="mb-2 w-full">
@@ -73,7 +69,7 @@ export const NFTDisplay: React.FC = () => {
           ? Array(12)
               .fill(0)
               .map((_, index) => <SkeletonNFT key={index} />)
-          : displayedNFTs.map(nft => (
+          : displayedNfts.map(nft => (
               <div
                 key={nft.id.tokenId}
                 className="cursor-pointer rounded-[20px] min-w-[200px] w-full max-w-[320px] p-6 backdrop-blur-lg shadow-lg shadow-[#286497] flex flex-col gap-6 hover:scale-102 flex-grow"
@@ -96,20 +92,15 @@ export const NFTDisplay: React.FC = () => {
             ))}
       </div>
 
-      <ReactPaginate
-        previousLabel={'←'}
-        nextLabel={'→'}
-        pageCount={totalPages}
-        marginPagesDisplayed={0}
-        pageRangeDisplayed={3}
-        onPageChange={handlePageChange}
-        containerClassName="flex justify-center items-center mt-6 gap-2"
-        pageClassName="px-3 py-1 hover:text-hover-link text-white"
-        previousClassName="px-3 py-1 rounded hover:text-hover-link text-white"
-        nextClassName="px-3 py-1 rounded hover:text-hover-link text-white"
-        activeClassName="text-hover-link"
-        breakClassName="text-white"
-      />
+      {displayedNfts.length < nfts.length && (
+        <div className="text-center mt-6">
+          <Button
+            text={'Load more'}
+            onClick={handleLoadMore}
+            className="px-4 mb-2"
+          />
+        </div>
+      )}
 
       <NftModal isOpen={isModalOpen} nft={selectedNFT} onClose={closeModal} />
     </div>

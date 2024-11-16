@@ -1,7 +1,7 @@
 import {LayoutDashboardView} from '../../layouts/LayoutDashboardView';
 import {NFTDisplay} from './components/NFTs';
 
-export const NftsPage = () => {
+const NftsPage = () => {
   return (
     <LayoutDashboardView>
       <div className="flex flex-col gap-6 px-4">
@@ -10,3 +10,5 @@ export const NftsPage = () => {
     </LayoutDashboardView>
   );
 };
+
+export default NftsPage;

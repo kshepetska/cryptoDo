@@ -20,7 +20,7 @@ export const ContactSupport = ({variant}: ContactSupportProps) => {
     <>
       {variant === 'large' ? (
         <div
-          className={`p-6 border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] flex flex-col gap-6`}
+          className={`p-6 bg-[#01C3FD] bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 transition-colors duration-200 ease-in-out rounded-[1.25rem] flex flex-col gap-6`}
         >
           <div className="flex items-center gap-4">
             <img className="w-12 h-12" src={emailIcon} alt="emailIcon" />
@@ -66,7 +66,7 @@ export const ContactSupport = ({variant}: ContactSupportProps) => {
         </div>
       ) : (
         <div
-          className={`p-6 border border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] flex flex-col gap-6`}
+          className={`p-6 bg-[#01C3FD] bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 transition-colors duration-200 ease-in-out rounded-[1.25rem] flex flex-col gap-6`}
         >
           <span className="text-xl font-semibold capitalize text-white">
             Still have questions?

@@ -3,7 +3,7 @@ import {LayoutDashboardView} from '../../layouts/LayoutDashboardView';
 import {FaqAndSupportBlock} from './components/FaqAndSupportBlock';
 import {useFaqAndSupportStore} from './store/useFaqAndSupportStore';
 
-export const FaqAndSupport = () => {
+const FaqAndSupport = () => {
   const {list} = useFaqAndSupportStore();
 
   return (
@@ -29,3 +29,5 @@ export const FaqAndSupport = () => {
     </LayoutDashboardView>
   );
 };
+
+export default FaqAndSupport;

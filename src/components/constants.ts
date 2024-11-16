@@ -22,8 +22,8 @@ export const sidebarLinks = [
   },
   {
     id: 2,
-    icon: userIcon,
-    navIcon: userIcon,
+    icon: starIcon,
+    navIcon: starIcon,
     linkName: 'NFTs',
     url: '/nfts',
     headerIcon: starIcon,

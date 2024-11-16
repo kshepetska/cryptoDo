@@ -26,7 +26,7 @@ export const UserWallet = ({address}: {address: string}) => {
     <>
       <Popover.Root open={isPopoverOpened} onOpenChange={setIsPopoverOpened}>
         <Popover.Trigger asChild>
-          <div className="relative flex h-[48px] items-center gap-2 px-3 py-1 bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] rounded-[42px] shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:from-[#00A6E2] hover:to-[#0272B7]">
+          <div className="relative flex h-[48px] items-center gap-2 px-3 py-1 bg-[#01C3FD] bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 transition-colors duration-200 ease-in-out rounded-[42px] shadow-md cursor-pointer transition-all duration-200 ease-in-out hover:from-[#00A6E2] hover:to-[#0272B7]">
             <img className="w-6 h-6" src={walletIcon} alt="walletIcon" />
             <span className="hidden md:block text-sm uppercase text-white">
               {shortenAddress(address)}
@@ -39,18 +39,18 @@ export const UserWallet = ({address}: {address: string}) => {
             sideOffset={10}
             align="end"
             avoidCollisions={true}
-            className="z-50 w-screen outline-none"
+            className="z-50 w-screen outline-none mt-1"
             style={{
               minWidth: 'var(--radix-popover-trigger-width)',
             }}
           >
             <>
-              <div className="relative z-20 mx-auto border p-5 md:mr-10 font-sans w-full sm:w-[413px] max-w-[336px] sm:max-w-[327px] max-h-[488px] invisible-scrollbar border-l-100 border-opacity-10 rounded-[1.25rem] bg-[#070A1F] text-white overflow-auto">
+              <div className="relative z-20 mx-auto p-5 md:mr-10 font-sans w-full sm:w-[413px] max-w-[336px] sm:max-w-[327px] max-h-[488px] invisible-scrollbar bg-[#01C3FD] bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 transition-colors duration-200 ease-in-out rounded-[1.25rem] text-white overflow-auto">
                 <div className="flex gap-2 items-center mb-5">
                   <div className="font-bold">Wallet</div>
                 </div>
                 <div className="mb-5 flex items-center gap-[10px]">
-                  <div className="p-2 bg-[#070A1F] rounded-md">
+                  <div className="p-2 bg-[#01C3FD] backdrop-blur-md bg-opacity-[0.2] rounded-md">
                     <img
                       className="w-6 h-6"
                       src={Metamask as string}

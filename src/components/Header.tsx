@@ -1,5 +1,5 @@
-import {FC, PropsWithChildren, useState} from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import {FC, useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import walletIcon from '../assets/wallet.svg';
 import {BurgerButton} from './burgerButton';
 import {LogoutButton} from './LogoutButton';
@@ -9,12 +9,13 @@ import projectLogo from '../assets/sidebarlogo.png';
 import {UserWallet} from './UserWallet';
 import {connectWallet} from '../services/walletService';
 
-export interface BackwardNavigationProps {
+interface BackwardNavigationProps {
+  link: string;
+  title: string;
   currentLocationName: string;
   targetLocationName: string;
   targetLocationPath: string;
 }
-
 export interface HeaderProps {
   isOpened: boolean;
   handleTranslateSidebar: () => void;
@@ -31,6 +32,13 @@ export const Header: FC<HeaderProps> = ({
   const navigationLinkConfig = getHeaderNavigationIcon();
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
 
+  useEffect(() => {
+    const storedWalletAddress = localStorage.getItem('walletAddress');
+    if (storedWalletAddress) {
+      setWalletAddress(storedWalletAddress);
+    }
+  }, []);
+
   const handleConnectWallet = async (): Promise<void> => {
     if (typeof window.ethereum === 'undefined') {
       alert(
@@ -42,8 +50,10 @@ export const Header: FC<HeaderProps> = ({
 
     try {
       const address: string | null = await connectWallet();
-      setWalletAddress(address);
-      console.log(address);
+      if (address) {
+        setWalletAddress(address);
+        localStorage.setItem('walletAddress', address);
+      }
     } catch (error) {
       console.error('Wallet connection failed:', error);
     }
@@ -93,7 +103,7 @@ export const Header: FC<HeaderProps> = ({
           ) : (
             <button
               onClick={handleConnectWallet}
-              className="bg-gradient-to-tr from-[#00C3FD] to-[#0284E2] hover:from-[#00A6E2] hover:to-[#0272B7] flex items-center justify-center w-11 h-11 rounded-full"
+              className="shadow-md bg-[#01C3FD] bg-opacity-10 backdrop-blur-md hover:bg-opacity-20 transition-colors duration-200 ease-in-out flex items-center justify-center w-11 h-11 rounded-full"
             >
               <img className="w-6 h-6" src={walletIcon} alt="walletIcon" />
             </button>

@@ -44,7 +44,7 @@ export const Sidebar = ({open, toggle, translated}: SidebarProps) => {
       }`}
     >
       <button
-        className={`w-6 h-6 hidden md:flex justify-center items-center rounded-full z-[100] border-solid border-[1px] border-[#363738] bg-[#262729] absolute -right-3 ${
+        className={`w-6 h-6 hidden md:flex justify-center items-center z-[100] absolute -right-3 ${
           open && isAdaptive ? 'top-8' : 'rotate-180 top-14'
         }`}
         onClick={toggle}

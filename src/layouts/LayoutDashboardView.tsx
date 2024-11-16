@@ -15,7 +15,7 @@ export const LayoutDashboardView: FC<PropsWithChildren> = ({children}) => {
 
   return (
     <>
-      <div className="text-white min-h-screen flex flex-col">
+      <div className="text-white min-h-screen overflow-x-hidden flex flex-col">
         <main className="flex-1 flex">
           <div className="flex-1 flex">
             <Sidebar
@@ -31,11 +31,17 @@ export const LayoutDashboardView: FC<PropsWithChildren> = ({children}) => {
                 width: `calc(100% - ${sidebarWidth}px)`,
               }}
             >
+              <div
+                className="absolute w-full h-full z-[0] -top-40"
+                style={{
+                  background:
+                    'radial-gradient(circle at top right, #0194FE 1%, transparent 40%)',
+                }}
+              ></div>
               <Header
                 isOpened={isOpened}
                 handleTranslateSidebar={toggleSidebarTranslate}
               />
-
               <div className="flex-1 relative z-[0]">{children}</div>
               <Footer />
             </div>

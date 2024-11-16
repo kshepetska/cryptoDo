@@ -8,7 +8,7 @@ import {signInUser, signInWithGoogle} from '../../services/auth';
 import {auth} from '../../firebase/firebase';
 import {onAuthStateChanged} from 'firebase/auth';
 
-export const RegistrationView: React.FC = () => {
+const RegistrationView: React.FC = () => {
   const navigate = useNavigate();
 
   const [emailSignIn, setEmailSignIn] = useState<string>('');
@@ -102,8 +102,8 @@ export const RegistrationView: React.FC = () => {
                   className={`px-5 py-[15px] mt-2 focus:outline-none ${
                     showErrorEmailSignIn || messageFromRequestSignIn
                       ? 'border-red-500'
-                      : 'border-[#535456]'
-                  } border-[1px] font-inter text-[14px] font-normal bg-transparent text-white rounded-[12px] w-full lg:w-[414px] placeholder-[#535456]`}
+                      : 'border-[#FFFFFF]'
+                  } border-[1px] font-inter text-[14px] font-normal bg-transparent text-white rounded-[12px] w-full lg:w-[414px] placeholder-[#FFFFFF]`}
                   onChange={e => {
                     setEmailSignIn(e.target.value);
                     setShowErrorEmailSignIn(false);
@@ -126,7 +126,7 @@ export const RegistrationView: React.FC = () => {
                   ) : (
                     <input
                       type="checkbox"
-                      className="appearance-none border border-[#2C2E2F] rounded-[4px] w-5 h-5"
+                      className="appearance-none border border-[#FFFFFF] rounded-[4px] w-5 h-5"
                     />
                   )}
                 </div>
@@ -170,3 +170,5 @@ export const RegistrationView: React.FC = () => {
     </div>
   );
 };
+
+export default RegistrationView;

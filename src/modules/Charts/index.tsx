@@ -17,7 +17,7 @@ const coins = [
   {id: 'matic-network', name: 'MATIC', color: '#8247e5'},
 ];
 
-export const ChartsData = () => {
+const ChartsData = () => {
   const [coinData, setCoinData] = useState<{
     [key: string]: {image: string; prices: number[]};
   }>({});
@@ -72,3 +72,5 @@ export const ChartsData = () => {
     </LayoutDashboardView>
   );
 };
+
+export default ChartsData;

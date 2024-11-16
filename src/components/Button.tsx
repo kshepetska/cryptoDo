@@ -25,11 +25,9 @@ export const Button = ({
 }: ButtonProps) => {
   const backgroundColorClass = transparent
     ? 'bg-transparent border-2 border-[#3C3D3E]'
-    : 'bg-gradient-to-tr from-[#00C3FD] to-[#0284E2]';
+    : 'bg-opacity-10 backdrop-blur-md bg-[#00C3FD] shadow-md';
 
-  const hoverBackgroundColorClass = transparent
-    ? ''
-    : 'hover:from-[#00A6E2] hover:to-[#0272B7]';
+  const hoverBackgroundColorClass = transparent ? '' : 'hover:bg-opacity-20';
 
   return (
     <button
