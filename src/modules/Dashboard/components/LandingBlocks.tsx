@@ -13,7 +13,7 @@ export const LandingBlocks = () => {
       <div className="flex w-full justify-center py-[10vh]">
         <Crystal />
       </div>
-      <div className="flex flex-row w-full justify-between p-5 gap-10 bg-[#286497] bg-opacity-20 rounded-[30px]">
+      <div className="flex flex-row w-full justify-between p-5 gap-10 bg-[#286497] bg-opacity-20 backdrop-blur-md rounded-[30px]">
         <div className="rounded-[30px] pr-6 bg-[#286497] bg-opacity-20 flex justify-start items-center w-[220px] h-[180px]">
           <Diamond color="#32FDE8" />
         </div>
@@ -48,7 +48,7 @@ export const LandingBlocks = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row w-full justify-between p-5 gap-10 bg-[#286497] bg-opacity-20 rounded-[30px]">
+      <div className="flex flex-row w-full justify-between p-5 gap-10 bg-[#286497] bg-opacity-20 backdrop-blur-md rounded-[30px]">
         <div className="flex flex-col gap-2 w-[30%]">
           <p className="font-semibold text-2xl text-white">CryptoDo</p>
           <div className="flex flex-col gap-2">

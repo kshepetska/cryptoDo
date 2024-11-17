@@ -1,46 +1,15 @@
 import React, {ReactNode, useEffect, useState} from 'react';
-import {motion} from 'framer-motion';
 import logoIcon from '../assets/logo.png';
+import {MotionGradient} from '../components/MotionGradinet';
 
 type LayoutLoginViewProps = {
   children: ReactNode;
 };
 
 export const LayoutLoginView: React.FC<LayoutLoginViewProps> = ({children}) => {
-  const [position, setPosition] = useState({x: 0, y: 0});
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPosition({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-      });
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="flex relative min-h-screen overflow-hidden">
-      <motion.div
-        className="absolute"
-        style={{
-          background: 'radial-gradient(circle, #01C3FD 2%, transparent 40%)',
-          width: '1200px',
-          height: '1200px',
-        }}
-        animate={{
-          left: position.x,
-          top: position.y,
-        }}
-        transition={{
-          type: 'spring',
-          stiffness: 40,
-          damping: 30,
-          duration: 4,
-        }}
-      ></motion.div>
-
+      <MotionGradient />
       <div className="relative w-full max-w-[calc(1266px+2rem)] px-4 mx-auto z-[1]">
         <div className="flex h-full md:pt-[100px] xl:pt-[152px] items-start">
           <div className="hidden flex-col gap-10 md:flex bg-center w-full max-w-[650px]">

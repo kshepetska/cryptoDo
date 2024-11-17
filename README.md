@@ -8,6 +8,7 @@ A cryptocurrency application built with TypeScript that provides up-to-date cryp
 - **NFTs**: View and track popular NFTs from different collections, integrated with [AlchemyAPI](https://www.alchemyapi.io/).
 - **Crypto Charts**: Interactive charts showing cryptocurrency prices and trends, powered by [ThingProxy](https://www.thingproxy.com/).
 - **User Registration**: Secure user authentication and registration flow using [Firebase](https://firebase.google.com/).
+- **Web3 Wallet Connection**: Seamlessly connect to your cryptocurrency wallet using Web3.js for a smooth experience in managing your assets.
 
 ## Tech Stack
 
@@ -17,6 +18,7 @@ A cryptocurrency application built with TypeScript that provides up-to-date cryp
 - **AlchemyAPI**: Provides data for NFTs, allowing users to explore trending NFT collections.
 - **ThingProxy**: Fetches real-time cryptocurrency data and charts.
 - **Firebase**: Handles user registration and authentication.
+- **Web3.js**: Enables wallet connection and interaction with blockchain networks.
 - **React**: A JavaScript library for building user interfaces.
 
 ## Installation

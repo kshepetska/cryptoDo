@@ -3,6 +3,7 @@ import {Footer} from '../components/Footer';
 import {Header} from '../components/Header';
 import {Sidebar} from '../components/Sidebar';
 import {useSidebar} from '../services/sidebarContext';
+import {MotionGradient} from '../components/MotionGradinet';
 
 export const LayoutDashboardView: FC<PropsWithChildren> = ({children}) => {
   const {
@@ -31,13 +32,7 @@ export const LayoutDashboardView: FC<PropsWithChildren> = ({children}) => {
                 width: `calc(100% - ${sidebarWidth}px)`,
               }}
             >
-              <div
-                className="absolute w-full h-full z-[0] -top-40"
-                style={{
-                  background:
-                    'radial-gradient(circle at top right, #0194FE 1%, transparent 40%)',
-                }}
-              ></div>
+              <MotionGradient />
               <Header
                 isOpened={isOpened}
                 handleTranslateSidebar={toggleSidebarTranslate}
